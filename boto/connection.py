@@ -669,9 +669,9 @@ class AWSAuthConnection(object):
         if 'http_proxy' in os.environ and not self.proxy:
             pattern = re.compile(
                 '(?:http://)?'
-                '(?:(?P<user>[\w\-\.]+):(?P<pass>.*)@)?'
-                '(?P<host>[\w\-\.]+)'
-                '(?::(?P<port>\d+))?'
+                r'(?:(?P<user>[\w\-\.]+):(?P<pass>.*)@)?'
+                r'(?P<host>[\w\-\.]+)'
+                r'(?::(?P<port>\d+))?'
             )
             match = pattern.match(os.environ['http_proxy'])
             if match:
@@ -1118,7 +1118,7 @@ class AWSAuthConnection(object):
         elif err.error_code == 'IllegalLocationConstraintException':
             region_regex = (
                 'The (.*?) location constraint is incompatible for the region '
-                'specific endpoint this request was sent to\.'
+                r'specific endpoint this request was sent to\.'
             )
             match = re.search(region_regex, err.body)
             if match and match.group(1) != 'unspecified':

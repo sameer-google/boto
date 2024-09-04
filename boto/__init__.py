@@ -1102,7 +1102,7 @@ def connect_machinelearning(aws_access_key_id=None,
 def storage_uri(uri_str, default_scheme='file', debug=0, validate=True,
                 bucket_storage_uri_class=BucketStorageUri,
                 suppress_consec_slashes=True, is_latest=False):
-    """
+    r"""
     Instantiate a StorageUri from a URI string.
 
     :type uri_str: string
