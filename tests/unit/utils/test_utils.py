@@ -58,7 +58,7 @@ class TestPassword(unittest.TestCase):
     def clstest(self, cls):
         """Insure that password.__eq__ hashes test value before compare."""
         password = cls('foo')
-        self.assertNotEquals(password, 'foo')
+        self.assertNotEqual(password, 'foo')
 
         password.set('foo')
         hashed = str(password)
@@ -66,7 +66,7 @@ class TestPassword(unittest.TestCase):
         self.assertEqual(password.str, hashed)
 
         password = cls(hashed)
-        self.assertNotEquals(password.str, 'foo')
+        self.assertNotEqual(password.str, 'foo')
         self.assertEqual(password, 'foo')
         self.assertEqual(password.str, hashed)
 
