@@ -639,7 +639,7 @@ class TestRDSLogFile(AWSMockServiceTestCase):
 
 class TestRDSLogFileDownload(AWSMockServiceTestCase):
     connection_class = RDSConnection
-    logfile_sample = """
+    logfile_sample = r"""
 ??2014-01-26 23:59:00.01 spid54      Microsoft SQL Server 2012 - 11.0.2100.60 (X64) 
     
     Feb 10 2012 19:39:15 

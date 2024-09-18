@@ -2637,7 +2637,7 @@ class OpsWorksConnection(AWSQueryConnection):
                      install_updates_on_boot=None,
                      use_ebs_optimized_instances=None,
                      lifecycle_event_configuration=None):
-        """
+        r"""
         Updates a specified layer.
 
         **Required Permissions**: To use this action, an IAM user must

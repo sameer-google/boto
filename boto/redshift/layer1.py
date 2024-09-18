@@ -324,7 +324,7 @@ class RedshiftConnection(AWSQueryConnection):
                        encrypted=None,
                        hsm_client_certificate_identifier=None,
                        hsm_configuration_identifier=None, elastic_ip=None):
-        """
+        r"""
         Creates a new cluster. To create the cluster in virtual
         private cloud (VPC), you must provide cluster subnet group
         name. If you don't provide a cluster subnet group name or the
@@ -2161,7 +2161,7 @@ class RedshiftConnection(AWSQueryConnection):
 
     def enable_logging(self, cluster_identifier, bucket_name,
                        s3_key_prefix=None):
-        """
+        r"""
         Starts logging information, such as queries and connection
         attempts, for the specified Amazon Redshift cluster.
 
@@ -2261,7 +2261,7 @@ class RedshiftConnection(AWSQueryConnection):
                        hsm_client_certificate_identifier=None,
                        hsm_configuration_identifier=None,
                        new_cluster_identifier=None):
-        """
+        r"""
         Modifies the settings for a cluster. For example, you can add
         another security or parameter group, update the preferred
         maintenance window, or change the master user password.
