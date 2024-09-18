@@ -35,7 +35,7 @@ class TestInstanceGroupArgs(unittest.TestCase):
         """
         instance_group = InstanceGroup(1, 'MASTER', 'm1.small',
                                        'SPOT', 'master', bidprice=Decimal(1.10))
-        self.assertEquals('1.10', instance_group.bidprice[:4])
+        self.assertEqual('1.10', instance_group.bidprice[:4])
 
     def test_bidprice_float(self):
         """
@@ -43,7 +43,7 @@ class TestInstanceGroupArgs(unittest.TestCase):
         """
         instance_group = InstanceGroup(1, 'MASTER', 'm1.small',
                                        'SPOT', 'master', bidprice=1.1)
-        self.assertEquals('1.1', instance_group.bidprice)
+        self.assertEqual('1.1', instance_group.bidprice)
 
     def test_bidprice_string(self):
         """
@@ -51,7 +51,7 @@ class TestInstanceGroupArgs(unittest.TestCase):
         """
         instance_group = InstanceGroup(1, 'MASTER', 'm1.small',
                                        'SPOT', 'master', bidprice='1.1')
-        self.assertEquals('1.1', instance_group.bidprice)
+        self.assertEqual('1.1', instance_group.bidprice)
 
 if __name__ == "__main__":
     unittest.main()
