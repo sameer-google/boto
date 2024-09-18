@@ -17,7 +17,7 @@ class TestInstanceGroupArgs(unittest.TestCase):
         Test InstanceGroup init raises ValueError when market==spot and
         bidprice is not specified.
         """
-        with self.assertRaisesRegexp(ValueError, 'bidprice must be specified'):
+        with self.assertRaisesRegex(ValueError, 'bidprice must be specified'):
             InstanceGroup(1, 'MASTER', 'm1.small',
                           'SPOT', 'master')
 

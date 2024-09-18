@@ -976,14 +976,14 @@ class TestModifyInterfaceAttribute(TestEC2ConnectionBase):
     def test_modify_group_set_invalid(self):
         self.set_http_response(status_code=200)
 
-        with self.assertRaisesRegexp(TypeError, 'iterable'):
+        with self.assertRaisesRegex(TypeError, 'iterable'):
             self.ec2.modify_network_interface_attribute('id', 'groupSet',
                                                         False)
 
     def test_modify_attr_invalid(self):
         self.set_http_response(status_code=200)
 
-        with self.assertRaisesRegexp(ValueError, 'Unknown attribute'):
+        with self.assertRaisesRegex(ValueError, 'Unknown attribute'):
             self.ec2.modify_network_interface_attribute('id', 'invalid', 0)
 
 
