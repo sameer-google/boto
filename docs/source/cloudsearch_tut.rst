@@ -423,11 +423,11 @@ It is also possible to delete documents::
 
     >>> import time
     >>> from datetime import datetime
-    >>> from datetime import UTC
+    >>> from datetime import timezone
 
     >>> doc_service = domain.get_document_service()
 
     >>> # Again we'll cheat and use the current epoch time as our version number
 
-    >>> doc_service.delete(4, int(time.mktime(datetime.now(tz=UTC).timetuple())))
+    >>> doc_service.delete(4, int(time.mktime(datetime.now(tz=timezone.utc).timetuple())))
     >>> doc_service.commit()

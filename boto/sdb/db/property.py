@@ -421,7 +421,7 @@ class DateTimeProperty(Property):
         return super(DateTimeProperty, self).get_value_for_datastore(model_instance)
 
     def now(self):
-        return datetime.datetime.now(tz=datetime.UTC)
+        return datetime.datetime.now(tz=datetime.timezone.utc)
 
 
 class DateProperty(Property):

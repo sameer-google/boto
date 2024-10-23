@@ -29,7 +29,7 @@ This class encapsulates the provider-specific header differences.
 import os
 from boto.compat import six
 from datetime import datetime
-from datetime import UTC
+from datetime import timezone
 
 import boto
 from boto import config
@@ -254,7 +254,7 @@ class Provider(object):
         else:
             # The credentials should be refreshed if they're going to expire
             # in less than 5 minutes.
-            delta = self._credential_expiry_time - datetime.now(tz=UTC)
+            delta = self._credential_expiry_time - datetime.now(tz=timezone.utc)
             # python2.6 does not have timedelta.total_seconds() so we have
             # to calculate this ourselves.  This is straight from the
             # datetime docs.

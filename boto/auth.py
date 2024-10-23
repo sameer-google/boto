@@ -547,7 +547,7 @@ class HmacAuthV4Handler(AuthHandler, HmacKeys):
         # authorization header is removed first.
         if 'X-Amzn-Authorization' in req.headers:
             del req.headers['X-Amzn-Authorization']
-        now = datetime.datetime.now(tz=datetime.UTC)
+        now = datetime.datetime.now(tz=datetime.timezone.utc)
         req.headers['X-Amz-Date'] = now.strftime('%Y%m%dT%H%M%SZ')
         if self._provider.security_token:
             req.headers['X-Amz-Security-Token'] = self._provider.security_token
@@ -777,7 +777,7 @@ class S3HmacAuthV4Handler(HmacAuthV4Handler, AuthHandler):
         http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html
         """
         if iso_date is None:
-            iso_date = datetime.datetime.now(tz=datetime.UTC).strftime('%Y%m%dT%H%M%SZ')
+            iso_date = datetime.datetime.now(tz=datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')
 
         region = self.determine_region_name(req.host)
         service = self.determine_service_name(req.host)
