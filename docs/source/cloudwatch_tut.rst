@@ -79,7 +79,7 @@ that we are interested in.  For this example, let's say we want the
 data for the previous hour::
 
     >>> import datetime
-    >>> end = datetime.datetime.now(tz=datetime.timezone.utc)
+    >>> end = datetime.datetime.now(tz=datetime.timezone.utc).replace(tzinfo=None)
     >>> start = end - datetime.timedelta(hours=1)
 
 We also need to supply the Statistic that we want reported and

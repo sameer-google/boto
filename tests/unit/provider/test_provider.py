@@ -371,7 +371,7 @@ class TestProvider(unittest.TestCase):
             p = provider.Provider('aws')
 
     def test_refresh_credentials(self):
-        now = datetime.now(tz=timezone.utc)
+        now = datetime.now(tz=timezone.utc).replace(tzinfo=None)
         first_expiration = (now + timedelta(seconds=10)).strftime(
             "%Y-%m-%dT%H:%M:%SZ")
         credentials = {

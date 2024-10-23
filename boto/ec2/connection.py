@@ -2601,7 +2601,7 @@ class EC2Connection(AWSQueryConnection):
         # target time (we delete a snapshot if there's another snapshot
         # that was made closer to the preceding target time).
 
-        now = datetime.now(tz=timezone.utc)
+        now = datetime.now(tz=timezone.utc).replace(tzinfo=None)
         last_hour = datetime(now.year, now.month, now.day, now.hour)
         last_midnight = datetime(now.year, now.month, now.day)
         last_sunday = datetime(now.year, now.month, now.day) - timedelta(days=(now.weekday() + 1) % 7)
